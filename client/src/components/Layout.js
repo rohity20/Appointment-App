@@ -73,10 +73,11 @@ function Layout({ children }) {
   const role = user?.isAdmin ? "Admin" : user?.isDoctor ? "Doctor" : "User";
   return (
     <div className="main">
+    {/* <div> */}
       <div className="d-flex layout">
-        <div className="sidebar">
-          <div className="sidebar-header">
-            <h1 className="logo">SH</h1>
+        <div className="sidebar bg-primary">
+          <div className="sidebar-header ">
+            <h1 className="logo">Dashboard</h1>
             <h1 className="role">{role}</h1>
           </div>
 
@@ -86,7 +87,7 @@ function Layout({ children }) {
               return (
                 <div
                   className={`d-flex menu-item ${
-                    isActive && "active-menu-item"
+                    isActive && "active-menu-item bg-info"
                   }`}
                 >
                   <i className={menu.icon}></i>
@@ -108,7 +109,7 @@ function Layout({ children }) {
         </div>
 
         <div className="content">
-          <div className="header">
+          <div className="header bg-primary text">
             {collapsed ? (
               <i
                 className="ri-menu-2-fill header-action-icon"
@@ -126,10 +127,10 @@ function Layout({ children }) {
                 count={user?.unseenNotifications.length}
                 onClick={() => navigate("/notifications")}
               >
-                <i className="ri-notification-line header-action-icon px-3"></i>
+                <i className="ri-notification-line header-action-icon px-2"></i>
               </Badge>
 
-              <Link className="anchor mx-2" to="/profile">
+              <Link className="anchor mx-2 px-4" to="/profile">
                 {user?.name}
               </Link>
             </div>
@@ -138,6 +139,16 @@ function Layout({ children }) {
           <div className="body">{children}</div>
         </div>
       </div>
+
+
+      <div className="footer py-5">
+      <h1 className="text-center">All Right Reserved &copy; Rohit Yadav</h1>
+      <p className="text-center mt-3">
+        <Link to="/about">About</Link>|<Link to="/contact">Contact</Link>|
+        <Link to="/policy">Privacy Policy</Link>
+      </p>
+    </div>
+
     </div>
   );
 }

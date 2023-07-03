@@ -162,7 +162,7 @@ function BookAppointment() {
                   }}
                 />
               {!isAvailable &&   <Button
-                  className="primary-button mt-3 full-width-button"
+                  className="text-white bg-primary mt-3 full-width-button"
                   onClick={checkAvailability}
                 >
                   Check Availability
@@ -170,7 +170,7 @@ function BookAppointment() {
 
                 {isAvailable && (
                   <Button
-                    className="primary-button mt-3 full-width-button"
+                    className="text-white bg-primary mt-3 full-width-button"
                     onClick={bookNow}
                   >
                     Book Now

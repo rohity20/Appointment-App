@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { hideLoading, showLoading } from "../redux/alertsSlice";
+import './Register.css';
 
 function Register() {
   const dispatch = useDispatch();
@@ -27,9 +28,9 @@ function Register() {
   };
 
   return (
-    <div className="authentication">
+    <div className="authentication banner">
       <div className="authentication-form card p-3">
-        <h1 className="card-title">Nice To Meet U</h1>
+        <h1 className="card-title bg-info">Nice To Meet U</h1>
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item label="Name" name="name">
             <Input placeholder="Name" />
@@ -42,7 +43,7 @@ function Register() {
           </Form.Item>
 
           <Button
-            className="primary-button my-2 full-width-button"
+            className="bg-info text-white my-2 full-width-button"
             htmlType="submit"
           >
             REGISTER

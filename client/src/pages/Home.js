@@ -5,6 +5,8 @@ import { Col, Row } from "antd";
 import Doctor from "../components/Doctor";
 import { useDispatch, useSelector } from "react-redux";
 import { showLoading, hideLoading } from "../redux/alertsSlice";
+import './Register.css';
+
 function Home() {
   const [doctors, setDoctors] = useState([]);
   const dispatch = useDispatch();
@@ -30,6 +32,7 @@ function Home() {
   }, []);
   return (
     <Layout>
+      <div className="main banner">
       <Row gutter={20}>
         {doctors.map((doctor) => (
           <Col span={8} xs={24} sm={24} lg={8}>
@@ -37,6 +40,7 @@ function Home() {
           </Col>
         ))}
       </Row>
+      </div>
     </Layout>
   );
 }

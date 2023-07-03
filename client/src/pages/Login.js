@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { hideLoading, showLoading } from "../redux/alertsSlice";
+import './Register.css';
 
 function Login() {
   const dispatch = useDispatch();
@@ -28,9 +29,9 @@ function Login() {
   };
 
   return (
-    <div className="authentication">
+    <div className="authentication banner">
       <div className="authentication-form card p-3">
-        <h1 className="card-title">Welcome Back</h1>
+        <h1 className="card-title bg-info">Welcome Back</h1>
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item label="Email" name="email">
             <Input placeholder="Email" />
@@ -40,7 +41,7 @@ function Login() {
           </Form.Item>
 
           
-          <Button className="primary-button my-2 full-width-button" htmlType="submit">
+          <Button className="bg-info text-white my-2 full-width-button" htmlType="submit">
             LOGIN
           </Button>
 
